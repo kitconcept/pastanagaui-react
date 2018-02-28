@@ -17,14 +17,16 @@ class App extends Component {
     return (
       <Fragment>
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
-          <div className="toolbar-actions">
-            <Icon name={penSVG} className="circled" />
+          <div className="toolbar-body">
+            <div className="toolbar-actions">
+              <Icon name={penSVG} className="circled" />
+            </div>
+            <div className="toolbar-bottom">
+              <img src={pastanagaSmall} alt="" />
+            </div>
           </div>
-          <div className="toolbar-middle">
+          <div className="toolbar-handler">
             <button onClick={this.handleShrink} />
-          </div>
-          <div className="toolbar-bottom">
-            <img src={pastanagaSmall} alt="" />
           </div>
         </div>
         <div className="content">The content</div>

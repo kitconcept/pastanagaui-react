@@ -31,33 +31,40 @@ body {
 
 .toolbar {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   background-color: #bbb;
   height: 20px;
   width: 100%;
   transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
   .toolbar.expanded {
     height: 100px; }
-    .toolbar.expanded .toolbar-middle button {
+    .toolbar.expanded .toolbar-body {
+      height: 80px; }
+    .toolbar.expanded .toolbar-handler button {
       opacity: 0.3; }
     .toolbar.expanded .toolbar-bottom img {
       opacity: 0;
-      transition: opacity 0.3s; }
+      bottom: 0;
+      transition: bottom 0.1s, opacity 0.1s; }
+  .toolbar-body {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 0; }
   .toolbar-actions {
-    flex: 1; }
-  .toolbar-middle {
+    height: 100%; }
+  .toolbar-handler {
     flex: 1;
     display: flex;
     justify-content: center;
     align-items: flex-end; }
-    .toolbar-middle button {
+    .toolbar-handler button {
       background-color: transparent;
       height: 20px;
       width: 80px;
       padding: 0;
       border: 0;
       transition: opacity 0.3s; }
-      .toolbar-middle button::before {
+      .toolbar-handler button::before {
         content: '';
         display: block;
         background-color: red;
@@ -70,9 +77,11 @@ body {
     align-items: center; }
     .toolbar-bottom img {
       opacity: 1;
-      height: 60%;
-      padding: 0px 4px;
-      transition: opacity 1.5s; }
+      height: 14px;
+      padding: 0px 6px;
+      position: relative;
+      bottom: -10px;
+      transition: bottom 0.5s; }
 
 .content {
   background-color: lightskyblue;
@@ -82,6 +91,29 @@ body {
   #main {
     flex-direction: row; }
   .toolbar {
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
-    width: 80px; } }
+    width: 100px; }
+    .toolbar.expanded {
+      height: 100%; }
+    .toolbar-body {
+      display: flex;
+      flex-direction: column;
+      height: 100%; }
+    .toolbar-actions {
+      flex: 1; }
+    .toolbar-bottom {
+      flex: 1; }
+    .toolbar-handler {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .toolbar-handler button {
+        width: 20px;
+        height: 80px; }
+        .toolbar-handler button::before {
+          height: 100%;
+          width: 4px;
+          left: 8px; } }

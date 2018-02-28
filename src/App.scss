@@ -15,7 +15,7 @@ body {
 
 .toolbar {
   display: flex;
-  flex-direction: row-reverse;
+  flex-direction: column;
   background-color: #bbb;
   height: 20px;
   width: 100%;
@@ -24,21 +24,31 @@ body {
   &.expanded {
     height: 100px;
 
-    .toolbar-middle button {
+    .toolbar-body {
+      height: 80px;
+    }
+    .toolbar-handler button {
       opacity: 0.3;
     }
 
     .toolbar-bottom img {
       opacity: 0;
-      transition: opacity 0.3s;
+      bottom: 0;
+      transition: bottom 0.1s, opacity 0.1s;
     }
   }
 
-  &-actions {
-    flex: 1;
+  &-body {
+    display: flex;
+    flex-direction: row-reverse;
+    height: 0;
   }
 
-  &-middle {
+  &-actions {
+    height: 100%;
+  }
+
+  &-handler {
     flex: 1;
     display: flex;
     justify-content: center;
@@ -70,9 +80,11 @@ body {
 
     img {
       opacity: 1;
-      height: 60%;
-      padding: 0px 4px;
-      transition: opacity 1.5s;
+      height: 14px;
+      padding: 0px 6px;
+      position: relative;
+      bottom: -10px;
+      transition: bottom 0.5s;
     }
   }
 }
@@ -87,8 +99,45 @@ body {
     flex-direction: row;
   }
   .toolbar {
-    flex-direction: column;
+    flex-direction: row;
     height: 100%;
-    width: 80px;
+    width: 100px;
+
+    &.expanded {
+      height: 100%;
+    }
+
+    &-body {
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+
+    &-actions {
+      flex: 1;
+    }
+
+    &-bottom {
+      flex: 1;
+    }
+
+    &-handler {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      button {
+        width: 20px;
+        height: 80px;
+
+        &::before {
+          height: 100%;
+          width: 4px;
+          left: 8px;
+        }
+      }
+    }
   }
 }
