@@ -1,0 +1,94 @@
+@import 'responsive';
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#main {
+  flex-direction: column;
+  height: 100%;
+  display: flex;
+}
+
+.toolbar {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: #bbb;
+  height: 20px;
+  width: 100%;
+  transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+  &.expanded {
+    height: 100px;
+
+    .toolbar-middle button {
+      opacity: 0.3;
+    }
+
+    .toolbar-bottom img {
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  &-actions {
+    flex: 1;
+  }
+
+  &-middle {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    button {
+      background-color: transparent;
+      height: 20px;
+      width: 80px;
+      padding: 0;
+      border: 0;
+      transition: opacity 0.3s;
+
+      &::before {
+        content: '';
+        display: block;
+        background-color: red;
+        height: 4px;
+        width: 100%;
+        position: relative;
+      }
+    }
+  }
+
+  &-bottom {
+    display: flex;
+    flex: 1;
+    align-items: center;
+
+    img {
+      opacity: 1;
+      height: 60%;
+      padding: 0px 4px;
+      transition: opacity 1.5s;
+    }
+  }
+}
+
+.content {
+  background-color: lightskyblue;
+  flex-grow: 1;
+}
+
+@media #{$sm-and-up} {
+  #main {
+    flex-direction: row;
+  }
+  .toolbar {
+    flex-direction: column;
+    height: 100%;
+    width: 80px;
+  }
+}
