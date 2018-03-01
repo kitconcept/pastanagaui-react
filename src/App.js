@@ -19,7 +19,9 @@ class App extends Component {
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
           <div className="toolbar-body">
             <div className="toolbar-actions">
-              <Icon name={penSVG} className="circled" />
+              <a className="edit" href="#">
+                <Icon name={penSVG} size="32px" className="circled" />
+              </a>
             </div>
             <div className="toolbar-bottom">
               <img src={pastanagaSmall} alt="" />
@@ -29,7 +31,7 @@ class App extends Component {
             <button onClick={this.handleShrink} />
           </div>
         </div>
-        <div className="content">The content</div>
+        <div className="content" />
       </Fragment>
     );
   }

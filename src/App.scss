@@ -1,10 +1,25 @@
 @import 'responsive';
 
+$teal-blue: #007eb1;
+
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+
+svg.circled {
+  box-sizing: content-box;
+  padding: 6px;
+  border: 2px solid currentColor;
+  border-radius: 50px;
+}
+
+svg.icon {
+  // Experiment if this is ok for all icons
+  box-sizing: content-box;
+  padding: 6px;
 }
 
 #main {
@@ -16,7 +31,7 @@ body {
 .toolbar {
   display: flex;
   flex-direction: column;
-  background-color: #bbb;
+  background-color: #fff;
   height: 20px;
   width: 100%;
   transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
@@ -46,6 +61,17 @@ body {
 
   &-actions {
     height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+
+    .edit {
+      color: $teal-blue;
+    }
+    a {
+      display: block;
+      // height: 24px;
+    }
   }
 
   &-handler {
@@ -61,6 +87,7 @@ body {
       padding: 0;
       border: 0;
       transition: opacity 0.3s;
+      cursor: pointer;
 
       &::before {
         content: '';
@@ -90,7 +117,7 @@ body {
 }
 
 .content {
-  background-color: lightskyblue;
+  background-color: #f2f5f6;
   flex-grow: 1;
 }
 
@@ -101,10 +128,12 @@ body {
   .toolbar {
     flex-direction: row;
     height: 100%;
-    width: 100px;
+    width: 20px;
+    justify-content: flex-end;
 
     &.expanded {
       height: 100%;
+      width: 100px;
     }
 
     &-body {
@@ -126,7 +155,6 @@ body {
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
 
       button {
         width: 20px;

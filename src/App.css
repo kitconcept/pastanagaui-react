@@ -24,6 +24,16 @@ body {
   margin: 0;
   padding: 0; }
 
+svg.circled {
+  box-sizing: content-box;
+  padding: 6px;
+  border: 2px solid currentColor;
+  border-radius: 50px; }
+
+svg.icon {
+  box-sizing: content-box;
+  padding: 6px; }
+
 #main {
   flex-direction: column;
   height: 100%;
@@ -32,7 +42,7 @@ body {
 .toolbar {
   display: flex;
   flex-direction: column;
-  background-color: #bbb;
+  background-color: #fff;
   height: 20px;
   width: 100%;
   transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
@@ -51,7 +61,14 @@ body {
     flex-direction: row-reverse;
     height: 0; }
   .toolbar-actions {
-    height: 100%; }
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 20px; }
+    .toolbar-actions .edit {
+      color: #007eb1; }
+    .toolbar-actions a {
+      display: block; }
   .toolbar-handler {
     flex: 1;
     display: flex;
@@ -63,7 +80,8 @@ body {
       width: 80px;
       padding: 0;
       border: 0;
-      transition: opacity 0.3s; }
+      transition: opacity 0.3s;
+      cursor: pointer; }
       .toolbar-handler button::before {
         content: '';
         display: block;
@@ -84,7 +102,7 @@ body {
       transition: bottom 0.5s; }
 
 .content {
-  background-color: lightskyblue;
+  background-color: #f2f5f6;
   flex-grow: 1; }
 
 @media only screen and (min-width: 600px) {
@@ -93,9 +111,11 @@ body {
   .toolbar {
     flex-direction: row;
     height: 100%;
-    width: 100px; }
+    width: 20px;
+    justify-content: flex-end; }
     .toolbar.expanded {
-      height: 100%; }
+      height: 100%;
+      width: 100px; }
     .toolbar-body {
       display: flex;
       flex-direction: column;
@@ -108,8 +128,7 @@ body {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      align-items: center; }
+      justify-content: center; }
       .toolbar-handler button {
         width: 20px;
         height: 80px; }
