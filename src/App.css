@@ -45,11 +45,12 @@ svg.icon {
   background-color: #fff;
   height: 20px;
   width: 100%;
-  transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+  transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  position: relative; }
   .toolbar.expanded {
     height: 100px; }
     .toolbar.expanded .toolbar-body {
-      height: 80px; }
+      height: 100px; }
     .toolbar.expanded .toolbar-handler button {
       opacity: 0.3; }
     .toolbar.expanded .toolbar-bottom img {
@@ -70,10 +71,12 @@ svg.icon {
     .toolbar-actions a {
       display: block; }
   .toolbar-handler {
-    flex: 1;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
-    justify-content: center;
-    align-items: flex-end; }
+    justify-content: center; }
     .toolbar-handler button {
       background-color: transparent;
       height: 20px;

@@ -35,12 +35,13 @@ svg.icon {
   height: 20px;
   width: 100%;
   transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+  position: relative;
 
   &.expanded {
     height: 100px;
 
     .toolbar-body {
-      height: 80px;
+      height: 100px;
     }
     .toolbar-handler button {
       opacity: 0.3;
@@ -75,10 +76,16 @@ svg.icon {
   }
 
   &-handler {
-    flex: 1;
+    // flex: 1;
+    // display: flex;
+    // justify-content: center;
+    // align-items: flex-end;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
     display: flex;
     justify-content: center;
-    align-items: flex-end;
 
     button {
       background-color: transparent;
