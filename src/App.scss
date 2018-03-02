@@ -40,6 +40,11 @@ svg.icon {
   &.expanded {
     height: 100px;
 
+    .toolbar-actions {
+      opacity: 1;
+      transition: opacity 0.3s 0.3s;
+    }
+
     .toolbar-body {
       height: 100px;
     }
@@ -58,13 +63,16 @@ svg.icon {
     display: flex;
     flex-direction: row-reverse;
     height: 0;
+    transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   }
 
   &-actions {
-    height: 100%;
     display: flex;
+    opacity: 0;
+    height: 100%;
     align-items: center;
     padding: 0 20px;
+    transition: opacity 0.1s 0.3s;
 
     .edit {
       color: $teal-blue;
@@ -132,24 +140,36 @@ svg.icon {
     height: 100%;
     width: 20px;
     justify-content: flex-end;
+    transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
     &.expanded {
       height: 100%;
-      width: 100px;
+      width: 80px;
+
+      .toolbar-body {
+        height: 100%;
+      }
+
+      .toolbar-actions {
+        flex-direction: column;
+      }
     }
 
     &-body {
       display: flex;
       flex-direction: column;
       height: 100%;
+      transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     }
 
     &-actions {
+      flex-direction: column;
       flex: 1;
     }
 
     &-bottom {
       flex: 1;
+      flex-direction: column;
     }
 
     &-handler {
