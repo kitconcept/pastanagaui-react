@@ -76,16 +76,11 @@ svg.icon {
   }
 
   &-handler {
-    // flex: 1;
-    // display: flex;
-    // justify-content: center;
-    // align-items: flex-end;
     position: absolute;
     bottom: 0;
-    left: 0;
-    right: 0;
     display: flex;
     justify-content: center;
+    width: 100%;
 
     button {
       background-color: transparent;
@@ -158,10 +153,11 @@ svg.icon {
     }
 
     &-handler {
-      flex: 1;
       display: flex;
       flex-direction: column;
       justify-content: center;
+      height: 100%;
+      width: 20px;
 
       button {
         width: 20px;
