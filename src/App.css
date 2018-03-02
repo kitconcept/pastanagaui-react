@@ -51,7 +51,7 @@ svg.icon {
     height: 100px; }
     .toolbar.expanded .toolbar-actions {
       opacity: 1;
-      transition: opacity 0.3s 0.3s; }
+      transition: opacity 0.1s 0.2s; }
     .toolbar.expanded .toolbar-body {
       height: 100px; }
     .toolbar.expanded .toolbar-handler button {
@@ -71,7 +71,7 @@ svg.icon {
     height: 100%;
     align-items: center;
     padding: 0 20px;
-    transition: opacity 0.1s 0.3s; }
+    transition: opacity 0.1s 0.2s; }
     .toolbar-actions .edit {
       color: #007eb1; }
     .toolbar-actions a {
@@ -133,13 +133,16 @@ svg.icon {
       display: flex;
       flex-direction: column;
       height: 100%;
+      width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
     .toolbar-actions {
       flex-direction: column;
-      flex: 1; }
+      flex: 1;
+      padding: 20px 0; }
     .toolbar-bottom {
       flex: 1;
-      flex-direction: column; }
+      flex-direction: column;
+      justify-content: flex-end; }
     .toolbar-handler {
       display: flex;
       flex-direction: column;

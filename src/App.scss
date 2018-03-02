@@ -42,7 +42,7 @@ svg.icon {
 
     .toolbar-actions {
       opacity: 1;
-      transition: opacity 0.3s 0.3s;
+      transition: opacity 0.1s 0.2s;
     }
 
     .toolbar-body {
@@ -72,7 +72,7 @@ svg.icon {
     height: 100%;
     align-items: center;
     padding: 0 20px;
-    transition: opacity 0.1s 0.3s;
+    transition: opacity 0.1s 0.2s;
 
     .edit {
       color: $teal-blue;
@@ -159,17 +159,20 @@ svg.icon {
       display: flex;
       flex-direction: column;
       height: 100%;
+      width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     }
 
     &-actions {
       flex-direction: column;
       flex: 1;
+      padding: 20px 0;
     }
 
     &-bottom {
       flex: 1;
       flex-direction: column;
+      justify-content: flex-end;
     }
 
     &-handler {
