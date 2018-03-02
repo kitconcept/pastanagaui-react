@@ -60,8 +60,8 @@ svg.icon {
       opacity: 1; }
     .toolbar.expanded .toolbar-bottom img {
       opacity: 0;
-      bottom: 0;
-      transition: bottom 0.1s, opacity 0.1s; }
+      bottom: 10px;
+      transition: bottom 0.3s 0.3s, opacity 0.3s; }
   .toolbar-body {
     display: flex;
     flex-direction: row-reverse;
@@ -114,9 +114,9 @@ svg.icon {
       opacity: 1;
       height: 14px;
       padding: 0px 6px;
-      position: relative;
-      bottom: -10px;
-      transition: bottom 0.5s; }
+      position: absolute;
+      bottom: 2px;
+      transition: bottom 0.3s 0.3s, opacity 0.3s 0.3s; }
 
 .content {
   background-color: #f2f5f6;
