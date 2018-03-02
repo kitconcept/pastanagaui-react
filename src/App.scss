@@ -52,6 +52,12 @@ svg.icon {
       opacity: 0.3;
     }
 
+    .toolbar-bottom {
+      a {
+        opacity: 1;
+      }
+    }
+
     .toolbar-bottom img {
       opacity: 0;
       bottom: 0;
@@ -64,10 +70,17 @@ svg.icon {
     flex-direction: row-reverse;
     height: 0;
     transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+    a {
+      color: #826a6a;
+      margin-left: 20px;
+    }
   }
 
   &-actions {
     display: flex;
+    flex-direction: row-reverse;
+    flex: 1;
     opacity: 0;
     height: 100%;
     align-items: center;
@@ -115,6 +128,10 @@ svg.icon {
     flex: 1;
     align-items: center;
 
+    a {
+      opacity: 0;
+    }
+
     img {
       opacity: 1;
       height: 14px;
@@ -161,6 +178,11 @@ svg.icon {
       height: 100%;
       width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+
+      a {
+        margin-left: 0;
+        margin-bottom: 20px;
+      }
     }
 
     &-actions {

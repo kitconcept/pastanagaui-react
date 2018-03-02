@@ -56,6 +56,8 @@ svg.icon {
       height: 100px; }
     .toolbar.expanded .toolbar-handler button {
       opacity: 0.3; }
+    .toolbar.expanded .toolbar-bottom a {
+      opacity: 1; }
     .toolbar.expanded .toolbar-bottom img {
       opacity: 0;
       bottom: 0;
@@ -65,8 +67,13 @@ svg.icon {
     flex-direction: row-reverse;
     height: 0;
     transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+    .toolbar-body a {
+      color: #826a6a;
+      margin-left: 20px; }
   .toolbar-actions {
     display: flex;
+    flex-direction: row-reverse;
+    flex: 1;
     opacity: 0;
     height: 100%;
     align-items: center;
@@ -101,6 +108,8 @@ svg.icon {
     display: flex;
     flex: 1;
     align-items: center; }
+    .toolbar-bottom a {
+      opacity: 0; }
     .toolbar-bottom img {
       opacity: 1;
       height: 14px;
@@ -135,6 +144,9 @@ svg.icon {
       height: 100%;
       width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+      .toolbar-body a {
+        margin-left: 0;
+        margin-bottom: 20px; }
     .toolbar-actions {
       flex-direction: column;
       flex: 1;
