@@ -30,12 +30,12 @@ class App extends Component {
               <a href="#">
                 <Icon name={addSVG} size="32px" />
               </a>
+              <a className="more" href="#">
+                <Icon name={moreSVG} size="32px" />
+              </a>
             </div>
             <div className="toolbar-bottom">
               <img src={pastanagaSmall} alt="" />
-              <a href="#">
-                <Icon name={moreSVG} size="32px" />
-              </a>
             </div>
           </div>
           <div className="toolbar-handler">

@@ -90,9 +90,13 @@ svg.icon {
     .edit {
       color: $teal-blue;
     }
+
+    .more {
+      flex: 1;
+    }
+
     a {
       display: block;
-      // height: 24px;
     }
   }
 
@@ -125,7 +129,7 @@ svg.icon {
 
   &-bottom {
     display: flex;
-    flex: 1;
+    // flex: 1;
     align-items: center;
 
     a {
