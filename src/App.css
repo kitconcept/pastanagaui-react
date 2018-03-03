@@ -111,12 +111,12 @@ svg.icon {
     align-items: center; }
     .toolbar-bottom a {
       opacity: 0; }
+    .toolbar-bottom .user {
+      display: none; }
+    .toolbar-bottom .divider {
+      display: none; }
     .toolbar-bottom .pastanagalogo {
-      margin-bottom: 10px;
-      padding-left: 6px;
-      padding-right: 6px; }
-      .toolbar-bottom .pastanagalogo img {
-        width: 100%; }
+      display: none; }
     .toolbar-bottom .minipastanaga {
       opacity: 1;
       height: 14px;
@@ -145,6 +145,11 @@ svg.icon {
         height: 100%; }
       .toolbar.expanded .toolbar-actions {
         flex-direction: column; }
+      .toolbar.expanded .toolbar-bottom .user {
+        opacity: 1;
+        transition: opacity 0.1s 0.2s; }
+      .toolbar.expanded .toolbar-bottom .pastanagalogo {
+        display: block; }
       .toolbar.expanded .toolbar-bottom .divider {
         opacity: 1;
         border-top: 1px solid #c7d5d8;
@@ -168,10 +173,21 @@ svg.icon {
       flex: 1;
       flex-direction: column;
       justify-content: flex-end; }
+      .toolbar-bottom .user {
+        opacity: 0;
+        display: block; }
       .toolbar-bottom .divider {
-        opacity: 0; }
+        opacity: 0;
+        display: block; }
       .toolbar-bottom .minipastanaga {
         bottom: 10px; }
+      .toolbar-bottom .pastanagalogo {
+        margin-bottom: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        display: block; }
+        .toolbar-bottom .pastanagalogo img {
+          width: 100%; }
     .toolbar-handler {
       display: flex;
       flex-direction: column;

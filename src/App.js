@@ -38,7 +38,7 @@ class App extends Component {
             </div>
             <div className="toolbar-bottom">
               <img className="minipastanaga" src={pastanagaSmall} alt="" />
-              <a className="more" href="#">
+              <a className="user" href="#">
                 <Icon name={userSVG} size="32px" />
               </a>
               <div className="divider" />

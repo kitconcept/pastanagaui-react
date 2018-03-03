@@ -59,10 +59,12 @@ svg.icon {
       }
     }
 
-    .toolbar-bottom .minipastanaga {
-      opacity: 0;
-      bottom: 10px;
-      transition: bottom 0.3s 0.3s, opacity 0.3s;
+    .toolbar-bottom {
+      .minipastanaga {
+        opacity: 0;
+        bottom: 10px;
+        transition: bottom 0.3s 0.3s, opacity 0.3s;
+      }
     }
   }
 
@@ -136,17 +138,15 @@ svg.icon {
     a {
       opacity: 0;
     }
-
-    .pastanagalogo {
-      margin-bottom: 10px;
-      padding-left: 6px;
-      padding-right: 6px;
-
-      img {
-        width: 100%;
-      }
+    .user {
+      display: none;
     }
-
+    .divider {
+      display: none;
+    }
+    .pastanagalogo {
+      display: none;
+    }
     .minipastanaga {
       opacity: 1;
       height: 14px;
@@ -187,6 +187,14 @@ svg.icon {
       }
 
       .toolbar-bottom {
+        .user {
+          opacity: 1;
+          transition: opacity 0.1s 0.2s;
+        }
+        .pastanagalogo {
+          display: block;
+        }
+
         .divider {
           opacity: 1;
           border-top: 1px solid #c7d5d8;
@@ -221,12 +229,28 @@ svg.icon {
       flex-direction: column;
       justify-content: flex-end;
 
+      .user {
+        opacity: 0;
+        display: block;
+      }
       .divider {
         opacity: 0;
+        display: block;
       }
 
       .minipastanaga {
         bottom: 10px;
+      }
+
+      .pastanagalogo {
+        margin-bottom: 10px;
+        padding-left: 6px;
+        padding-right: 6px;
+        display: block;
+
+        img {
+          width: 100%;
+        }
       }
     }
 
