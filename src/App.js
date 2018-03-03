@@ -1,11 +1,13 @@
 import React, { Component, Fragment } from 'react';
 import Icon from './Icon/Icon';
 import pastanagaSmall from './pastanaga-small.svg';
+import pastanagalogo from './pastanaga.svg';
 import './App.css';
 import penSVG from './icons/pen.svg';
 import folderSVG from './icons/folder.svg';
 import addSVG from './icons/add-document.svg';
 import moreSVG from './icons/more.svg';
+import userSVG from './icons/user.svg';
 
 class App extends Component {
   state = {
@@ -35,7 +37,14 @@ class App extends Component {
               </a>
             </div>
             <div className="toolbar-bottom">
-              <img src={pastanagaSmall} alt="" />
+              <img className="minipastanaga" src={pastanagaSmall} alt="" />
+              <a className="more" href="#">
+                <Icon name={userSVG} size="32px" />
+              </a>
+              <div className="divider" />
+              <div className="pastanagalogo">
+                <img src={pastanagalogo} alt="" />
+              </div>
             </div>
           </div>
           <div className="toolbar-handler">
