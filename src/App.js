@@ -12,18 +12,21 @@ import userSVG from './icons/user.svg';
 class App extends Component {
   state = {
     expanded: false,
-    showMoreMenu: false,
+    showMenu: false,
     menuStyle: {},
   };
 
   handleShrink = () =>
     this.setState((state, props) => ({ expanded: !state.expanded }));
 
+  closeMenu = (e, selector) =>
+    this.setState((state, props) => ({ showMenu: false }));
+
   showMenu = (e, selector) => {
     if (selector === 'personal') {
       this.setState((state, props) => {
         return {
-          showMoreMenu: !state.showMoreMenu,
+          showMenu: !state.showMenu,
           menuStyle: { bottom: 0 },
         };
       });
@@ -31,7 +34,7 @@ class App extends Component {
       const elemOffsetTop = e.target.getBoundingClientRect().top;
       this.setState((state, props) => {
         return {
-          showMoreMenu: !state.showMoreMenu,
+          showMenu: !state.showMenu,
           menuStyle: { top: `${elemOffsetTop}px` },
         };
       });
@@ -44,7 +47,7 @@ class App extends Component {
         <div
           style={this.state.menuStyle}
           className={
-            this.state.showMoreMenu ? 'toolbar-content show' : 'toolbar-content'
+            this.state.showMenu ? 'toolbar-content show' : 'toolbar-content'
           }
         >
           The toolbar content
@@ -61,7 +64,12 @@ class App extends Component {
               <a href="#">
                 <Icon name={addSVG} size="32px" />
               </a>
-              <button className="more" onClick={this.showMenu}>
+              <button
+                className="more"
+                onClick={this.showMenu}
+                onBlur={this.closeMenu}
+                tabIndex={0}
+              >
                 <Icon name={moreSVG} size="32px" />
               </button>
             </div>
@@ -70,6 +78,8 @@ class App extends Component {
               <button
                 className="user"
                 onClick={e => this.showMenu(e, 'personal')}
+                onBlur={this.closeMenu}
+                tabIndex={0}
               >
                 <Icon name={userSVG} size="32px" />
               </button>
