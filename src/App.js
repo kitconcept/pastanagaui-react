@@ -12,14 +12,34 @@ import userSVG from './icons/user.svg';
 class App extends Component {
   state = {
     expanded: false,
+    showMoreMenu: false,
+    menuOffsetTop: 0,
   };
 
   handleShrink = () =>
     this.setState((state, props) => ({ expanded: !state.expanded }));
 
+  showMoreMenu = e => {
+    const elemOffsetTop = e.target.getBoundingClientRect().top;
+    this.setState((state, props) => {
+      return {
+        showMoreMenu: !state.showMoreMenu,
+        menuOffsetTop: `${elemOffsetTop}px`,
+      };
+    });
+  };
+
   render() {
     return (
       <Fragment>
+        <div
+          style={{ top: this.state.menuOffsetTop }}
+          className={
+            this.state.showMoreMenu ? 'toolbar-content show' : 'toolbar-content'
+          }
+        >
+          The toolbar content
+        </div>
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
           <div className="toolbar-body">
             <div className="toolbar-actions">
@@ -32,9 +52,9 @@ class App extends Component {
               <a href="#">
                 <Icon name={addSVG} size="32px" />
               </a>
-              <a className="more" href="#">
+              <button className="more" onClick={this.showMoreMenu}>
                 <Icon name={moreSVG} size="32px" />
-              </a>
+              </button>
             </div>
             <div className="toolbar-bottom">
               <img className="minipastanaga" src={pastanagaSmall} alt="" />

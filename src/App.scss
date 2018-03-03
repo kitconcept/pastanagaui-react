@@ -1,6 +1,7 @@
 @import 'responsive';
 
 $teal-blue: #007eb1;
+$background-content: #f2f5f6;
 
 html,
 body {
@@ -68,15 +69,42 @@ svg.icon {
     }
   }
 
+  &-content {
+    height: 0;
+    opacity: 0;
+    background-color: $background-content;
+    transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+      opacity 0.3s 0.3s;
+
+    &.show {
+      opacity: 1;
+      height: 300px;
+      transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    }
+  }
+
   &-body {
     display: flex;
     flex-direction: row-reverse;
     height: 0;
     transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
-    a {
+    a,
+    button {
       color: #826a6a;
       margin-left: 20px;
+      cursor: pointer;
+    }
+
+    button {
+      // Default reset for button
+      padding: 0;
+      text-align: initial;
+      border: 0;
+      background: transparent;
+      &:focus {
+        outline: none;
+      }
     }
   }
 
@@ -98,7 +126,8 @@ svg.icon {
       flex: 1;
     }
 
-    a {
+    a,
+    button {
       display: block;
     }
   }
@@ -159,7 +188,7 @@ svg.icon {
 }
 
 .content {
-  background-color: #f2f5f6;
+  background-color: $background-content;
   flex-grow: 1;
 }
 
@@ -205,6 +234,12 @@ svg.icon {
       }
     }
 
+    &-content {
+      position: absolute;
+      left: 80px;
+      // top: 228px; // (for .more)
+    }
+
     &-body {
       display: flex;
       flex-direction: column;
@@ -212,7 +247,8 @@ svg.icon {
       width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
 
-      a {
+      a,
+      button {
         margin-left: 0;
         margin-bottom: 20px;
       }
@@ -222,6 +258,10 @@ svg.icon {
       flex-direction: column;
       flex: 1;
       padding: 20px 0;
+
+      .more {
+        flex: 0;
+      }
     }
 
     &-bottom {

@@ -62,14 +62,32 @@ svg.icon {
       opacity: 0;
       bottom: 10px;
       transition: bottom 0.3s 0.3s, opacity 0.3s; }
+  .toolbar-content {
+    height: 0;
+    opacity: 0;
+    background-color: #f2f5f6;
+    transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.3s 0.3s; }
+    .toolbar-content.show {
+      opacity: 1;
+      height: 300px;
+      transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
   .toolbar-body {
     display: flex;
     flex-direction: row-reverse;
     height: 0;
     transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
-    .toolbar-body a {
+    .toolbar-body a,
+    .toolbar-body button {
       color: #826a6a;
-      margin-left: 20px; }
+      margin-left: 20px;
+      cursor: pointer; }
+    .toolbar-body button {
+      padding: 0;
+      text-align: initial;
+      border: 0;
+      background: transparent; }
+      .toolbar-body button:focus {
+        outline: none; }
   .toolbar-actions {
     display: flex;
     flex-direction: row-reverse;
@@ -83,7 +101,8 @@ svg.icon {
       color: #007eb1; }
     .toolbar-actions .more {
       flex: 1; }
-    .toolbar-actions a {
+    .toolbar-actions a,
+    .toolbar-actions button {
       display: block; }
   .toolbar-handler {
     position: absolute;
@@ -156,19 +175,25 @@ svg.icon {
         height: 20px;
         width: 40px;
         transition: opacity 0.1s 0.2s; }
+    .toolbar-content {
+      position: absolute;
+      left: 80px; }
     .toolbar-body {
       display: flex;
       flex-direction: column;
       height: 100%;
       width: 100%;
       transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
-      .toolbar-body a {
+      .toolbar-body a,
+      .toolbar-body button {
         margin-left: 0;
         margin-bottom: 20px; }
     .toolbar-actions {
       flex-direction: column;
       flex: 1;
       padding: 20px 0; }
+      .toolbar-actions .more {
+        flex: 0; }
     .toolbar-bottom {
       flex: 1;
       flex-direction: column;
