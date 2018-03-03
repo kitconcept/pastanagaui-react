@@ -14,6 +14,7 @@ class App extends Component {
     expanded: false,
     showMenu: false,
     menuStyle: {},
+    menuComponent: <span />,
   };
 
   handleShrink = () =>
@@ -21,6 +22,14 @@ class App extends Component {
 
   closeMenu = (e, selector) =>
     this.setState((state, props) => ({ showMenu: false }));
+
+  loadPersonalTools = () => {
+    import(`./Profile.js`).then(Component =>
+      this.setState((state, props) => ({
+        menuComponent: <Component.default />,
+      })),
+    );
+  };
 
   showMenu = (e, selector) => {
     if (selector === 'personal') {
@@ -30,6 +39,7 @@ class App extends Component {
           menuStyle: { bottom: 0 },
         };
       });
+      this.loadPersonalTools();
     } else {
       const elemOffsetTop = e.target.getBoundingClientRect().top;
       this.setState((state, props) => {
@@ -50,7 +60,7 @@ class App extends Component {
             this.state.showMenu ? 'toolbar-content show' : 'toolbar-content'
           }
         >
-          The toolbar content
+          {this.state.menuComponent}
         </div>
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
           <div className="toolbar-body">

@@ -177,7 +177,8 @@ svg.icon {
         transition: opacity 0.1s 0.2s; }
     .toolbar-content {
       position: absolute;
-      left: 80px; }
+      left: 80px;
+      width: 320px; }
     .toolbar-body {
       display: flex;
       flex-direction: column;
