@@ -65,7 +65,7 @@ svg.icon {
   .toolbar-content {
     height: 0;
     opacity: 0;
-    background-color: #f2f5f6;
+    background-color: #ddd;
     transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045), opacity 0.3s 0.3s; }
     .toolbar-content.show {
       opacity: 1;

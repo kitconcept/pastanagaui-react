@@ -13,27 +13,36 @@ class App extends Component {
   state = {
     expanded: false,
     showMoreMenu: false,
-    menuOffsetTop: 0,
+    menuStyle: {},
   };
 
   handleShrink = () =>
     this.setState((state, props) => ({ expanded: !state.expanded }));
 
-  showMoreMenu = e => {
-    const elemOffsetTop = e.target.getBoundingClientRect().top;
-    this.setState((state, props) => {
-      return {
-        showMoreMenu: !state.showMoreMenu,
-        menuOffsetTop: `${elemOffsetTop}px`,
-      };
-    });
+  showMenu = (e, selector) => {
+    if (selector === 'personal') {
+      this.setState((state, props) => {
+        return {
+          showMoreMenu: !state.showMoreMenu,
+          menuStyle: { bottom: 0 },
+        };
+      });
+    } else {
+      const elemOffsetTop = e.target.getBoundingClientRect().top;
+      this.setState((state, props) => {
+        return {
+          showMoreMenu: !state.showMoreMenu,
+          menuStyle: { top: `${elemOffsetTop}px` },
+        };
+      });
+    }
   };
 
   render() {
     return (
       <Fragment>
         <div
-          style={{ top: this.state.menuOffsetTop }}
+          style={this.state.menuStyle}
           className={
             this.state.showMoreMenu ? 'toolbar-content show' : 'toolbar-content'
           }
@@ -52,15 +61,18 @@ class App extends Component {
               <a href="#">
                 <Icon name={addSVG} size="32px" />
               </a>
-              <button className="more" onClick={this.showMoreMenu}>
+              <button className="more" onClick={this.showMenu}>
                 <Icon name={moreSVG} size="32px" />
               </button>
             </div>
             <div className="toolbar-bottom">
               <img className="minipastanaga" src={pastanagaSmall} alt="" />
-              <a className="user" href="#">
+              <button
+                className="user"
+                onClick={e => this.showMenu(e, 'personal')}
+              >
                 <Icon name={userSVG} size="32px" />
-              </a>
+              </button>
               <div className="divider" />
               <div className="pastanagalogo">
                 <img src={pastanagalogo} alt="" />
