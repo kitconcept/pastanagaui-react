@@ -577,6 +577,7 @@ svg.icon {
       transition: bottom 0.3s 0.3s, opacity 0.3s; }
   .toolbar-content {
     overflow: hidden;
+    overflow-y: scroll;
     max-height: 0;
     opacity: 0;
     background-color: #fff;
@@ -675,16 +676,10 @@ svg.icon {
   flex-grow: 1; }
 
 .pusher-puller {
-  transition: transform ease-in-out 0.3s;
   position: relative;
-  min-height: 500px;
-  transition: left ease-in-out 0.3s; }
-  .pusher-puller > * {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0; }
+  transition: left ease-in-out 0.3s;
+  width: 2000px;
+  display: flex; }
 
 @media only screen and (min-width: 600px) {
   #main {

@@ -13,7 +13,10 @@ class Profile extends Component {
     return (
       <div
         className="profile pastanaga-menu"
-        style={{ left: `${this.props.componentIndex * 100}%` }}
+        style={{
+          left: `${this.props.componentIndex * 100}%`,
+          width: `${this.props.theToolbar.offsetWidth}px`,
+        }}
       >
         <header className="header pulled">
           <button onClick={this.pull}>

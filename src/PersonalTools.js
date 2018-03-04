@@ -21,7 +21,10 @@ class PersonalTools extends Component {
     return (
       <div
         className="personal-tools pastanaga-menu"
-        style={{ left: `${this.props.componentIndex * 100}%` }}
+        style={{
+          left: `${this.props.componentIndex * 100}%`,
+          width: `${this.props.theToolbar.offsetWidth}px`,
+        }}
       >
         <header className="header">
           <h2>Víctor Fernández de Alba</h2>

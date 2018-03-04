@@ -42,6 +42,7 @@ class App extends Component {
                 loadComponent={this.loadComponent}
                 unloadComponent={this.unloadComponent}
                 componentIndex={nextIndex}
+                theToolbar={this.theToolbar}
                 key={`menucomp-${nextIndex}`}
               />
             ),
@@ -86,6 +87,9 @@ class App extends Component {
           className={
             this.state.showMenu ? 'toolbar-content show' : 'toolbar-content'
           }
+          ref={toolbar => {
+            this.theToolbar = toolbar;
+          }}
         >
           <div
             className="pusher-puller"
