@@ -1,13 +1,14 @@
+@import 'reset';
+@import 'variables';
+@import 'fonts';
 @import 'responsive';
-
-$teal-blue: #007eb1;
-$background-content: #f2f5f6;
 
 html,
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: Poppins;
 }
 
 svg.circled {
@@ -37,6 +38,7 @@ svg.icon {
   width: 100%;
   transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
   position: relative;
+  box-shadow: 0 1px 2px 0 #c7d5d8;
 
   &.expanded {
     height: 100px;
@@ -70,16 +72,17 @@ svg.icon {
   }
 
   &-content {
-    height: 0;
+    max-height: 0;
     opacity: 0;
-    background-color: #ddd;
-    transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+    background-color: #fff;
+    transition: max-height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
       opacity 0.3s 0.3s;
-
+    box-shadow: 0 1px 2px 0 #c7d5d8;
     &.show {
       opacity: 1;
-      height: 300px;
-      transition: height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+      max-height: 900px;
+      transition: max-height 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+        opacity 0.3s 0.3s;
     }
   }
 
@@ -236,7 +239,7 @@ svg.icon {
 
     &-content {
       position: absolute;
-      left: 80px;
+      left: 84px;
       width: 320px;
       // top: 228px; // (for .more)
     }

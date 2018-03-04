@@ -21,10 +21,10 @@ class App extends Component {
     this.setState((state, props) => ({ expanded: !state.expanded }));
 
   closeMenu = (e, selector) =>
-    this.setState((state, props) => ({ showMenu: false }));
+    this.setState((state, props) => ({ showMenu: true }));
 
   loadPersonalTools = () => {
-    import(`./Profile.js`).then(Component =>
+    import(`./PersonalTools.js`).then(Component =>
       this.setState((state, props) => ({
         menuComponent: <Component.default />,
       })),
