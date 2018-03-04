@@ -2,6 +2,11 @@ $silver-blue: #b8c6c8;
 $teal-blue: #007eb1;
 
 .personal-tools {
+  &.pushed {
+    transform: translate(-324px);
+    transition: transform ease-in-out 0.3s;
+  }
+
   header {
     display: flex;
     padding: 8px 20px;

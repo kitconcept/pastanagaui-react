@@ -6,9 +6,23 @@ import avatar from './avatar.jpg';
 import './PersonalTools.css';
 
 class PersonalTools extends Component {
+  state = {
+    pushed: false,
+  };
+
+  push = () => {
+    this.setState((state, props) => ({
+      pushed: true,
+    }));
+  };
+
   render() {
     return (
-      <div className="personal-tools">
+      <div
+        className={
+          this.state.pushed ? 'personal-tools pushed' : 'personal-tools'
+        }
+      >
         <header className="header">
           <h2>Víctor Fernández de Alba</h2>
           <a href="#">
@@ -39,7 +53,7 @@ class PersonalTools extends Component {
           {/* This (probably also) should be a Component by itself*/}
           <ul>
             <li>
-              <button>
+              <button onClick={this.push}>
                 Profile<Icon name={rightArrowSVG} size="24px" />
               </button>
             </li>
