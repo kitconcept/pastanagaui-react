@@ -14,32 +14,58 @@ class App extends Component {
     expanded: false,
     showMenu: false,
     menuStyle: {},
-    menuComponent: <span />,
+    menuComponents: [],
   };
 
   handleShrink = () =>
     this.setState((state, props) => ({ expanded: !state.expanded }));
 
   closeMenu = (e, selector) =>
-    this.setState((state, props) => ({ showMenu: true }));
+    this.setState((state, props) => ({ showMenu: false, menuComponents: [] }));
 
-  loadPersonalTools = () => {
-    import(`./PersonalTools.js`).then(Component =>
-      this.setState((state, props) => ({
-        menuComponent: <Component.default />,
-      })),
-    );
+  loadComponent = type => {
+    const { menuComponents } = this.state;
+    const nextIndex = menuComponents.length;
+
+    if (
+      !this.state.menuComponents.reduce(
+        (prev, current) => prev && current.name === `${type}`,
+        false,
+      )
+    ) {
+      import(`./${type}.js`).then(Component =>
+        this.setState((state, props) => ({
+          menuComponents: state.menuComponents.concat({
+            name: `${type}`,
+            component: (
+              <Component.default
+                loadComponent={this.loadComponent}
+                unloadComponent={this.unloadComponent}
+                componentIndex={nextIndex}
+                key={`menucomp-${nextIndex}`}
+              />
+            ),
+          }),
+        })),
+      );
+    }
+  };
+
+  unloadComponent = () => {
+    this.setState((state, props) => ({
+      menuComponents: state.menuComponents.slice(0, -1),
+    }));
   };
 
   showMenu = (e, selector) => {
-    if (selector === 'personal') {
+    // PersonalTools always shows at bottom
+    if (selector === 'PersonalTools') {
       this.setState((state, props) => {
         return {
           showMenu: !state.showMenu,
           menuStyle: { bottom: 0 },
         };
       });
-      this.loadPersonalTools();
     } else {
       const elemOffsetTop = e.target.getBoundingClientRect().top;
       this.setState((state, props) => {
@@ -49,6 +75,7 @@ class App extends Component {
         };
       });
     }
+    this.loadComponent(selector);
   };
 
   render() {
@@ -60,7 +87,16 @@ class App extends Component {
             this.state.showMenu ? 'toolbar-content show' : 'toolbar-content'
           }
         >
-          {this.state.menuComponent}
+          <div
+            className="pusher-puller"
+            style={{
+              left: `-${(this.state.menuComponents.length - 1) * 100}%`,
+            }}
+          >
+            {this.state.menuComponents.map(component => (
+              <Fragment>{component.component}</Fragment>
+            ))}
+          </div>
         </div>
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
           <div className="toolbar-body">
@@ -87,8 +123,7 @@ class App extends Component {
               <img className="minipastanaga" src={pastanagaSmall} alt="" />
               <button
                 className="user"
-                onClick={e => this.showMenu(e, 'personal')}
-                onBlur={this.closeMenu}
+                onClick={e => this.showMenu(e, 'PersonalTools')}
                 tabIndex={0}
               >
                 <Icon name={userSVG} size="32px" />

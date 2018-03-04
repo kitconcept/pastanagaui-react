@@ -10,18 +10,18 @@ class PersonalTools extends Component {
     pushed: false,
   };
 
-  push = () => {
+  push = selector => {
     this.setState((state, props) => ({
       pushed: true,
     }));
+    this.props.loadComponent(selector);
   };
 
   render() {
     return (
       <div
-        className={
-          this.state.pushed ? 'personal-tools pushed' : 'personal-tools'
-        }
+        className="personal-tools pastanaga-menu"
+        style={{ left: `${this.props.componentIndex * 100}%` }}
       >
         <header className="header">
           <h2>Víctor Fernández de Alba</h2>
@@ -53,7 +53,7 @@ class PersonalTools extends Component {
           {/* This (probably also) should be a Component by itself*/}
           <ul>
             <li>
-              <button onClick={this.push}>
+              <button onClick={() => this.push('Profile')}>
                 Profile<Icon name={rightArrowSVG} size="24px" />
               </button>
             </li>

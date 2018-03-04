@@ -1,0 +1,15 @@
+@import 'variables';
+
+.vertical.divider {
+  border-left: 1px solid $silver;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.profile {
+  header {
+    button {
+      color: $teal-blue;
+    }
+  }
+}

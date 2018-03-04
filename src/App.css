@@ -576,6 +576,7 @@ svg.icon {
       bottom: 10px;
       transition: bottom 0.3s 0.3s, opacity 0.3s; }
   .toolbar-content {
+    overflow: hidden;
     max-height: 0;
     opacity: 0;
     background-color: #fff;
@@ -658,9 +659,32 @@ svg.icon {
       bottom: 2px;
       transition: bottom 0.3s 0.3s, opacity 0.3s 0.3s; }
 
+.toolbar-content button,
+.toolbar button {
+  padding: 0;
+  text-align: initial;
+  border: 0;
+  background: transparent;
+  cursor: pointer; }
+  .toolbar-content button:focus,
+  .toolbar button:focus {
+    outline: none; }
+
 .content {
   background-color: #f2f5f6;
   flex-grow: 1; }
+
+.pusher-puller {
+  transition: transform ease-in-out 0.3s;
+  position: relative;
+  min-height: 500px;
+  transition: left ease-in-out 0.3s; }
+  .pusher-puller > * {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0; }
 
 @media only screen and (min-width: 600px) {
   #main {
@@ -740,4 +764,6 @@ svg.icon {
         .toolbar-handler button::before {
           height: 100%;
           width: 4px;
-          left: 8px; } }
+          left: 8px; }
+  .pusher-puller > * {
+    width: 320px; } }
