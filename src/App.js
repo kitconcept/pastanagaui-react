@@ -106,21 +106,20 @@ class App extends Component {
           <div className="toolbar-body">
             <div className="toolbar-actions">
               <a className="edit" href="#">
-                <Icon name={penSVG} size="32px" className="circled" />
+                <Icon name={penSVG} size="36px" className="circled" />
               </a>
               <a href="#">
-                <Icon name={folderSVG} size="32px" />
+                <Icon name={folderSVG} size="36px" />
               </a>
               <a href="#">
-                <Icon name={addSVG} size="32px" />
+                <Icon name={addSVG} size="36px" />
               </a>
               <button
                 className="more"
-                onClick={this.showMenu}
-                onBlur={this.closeMenu}
+                onClick={e => this.showMenu(e, 'More')}
                 tabIndex={0}
               >
-                <Icon name={moreSVG} size="32px" />
+                <Icon name={moreSVG} size="36px" />
               </button>
             </div>
             <div className="toolbar-bottom">
@@ -130,7 +129,7 @@ class App extends Component {
                 onClick={e => this.showMenu(e, 'PersonalTools')}
                 tabIndex={0}
               >
-                <Icon name={userSVG} size="32px" />
+                <Icon name={userSVG} size="36px" />
               </button>
               <div className="divider" />
               <div className="pastanagalogo">

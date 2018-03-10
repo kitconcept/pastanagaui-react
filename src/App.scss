@@ -13,7 +13,7 @@ body {
 
 svg.circled {
   box-sizing: content-box;
-  padding: 6px;
+  padding: 4px;
   border: 2px solid currentColor;
   border-radius: 50px;
 }
@@ -21,7 +21,7 @@ svg.circled {
 svg.icon {
   // Experiment if this is ok for all icons
   box-sizing: content-box;
-  padding: 6px;
+  padding: 4px;
 }
 
 #main {
@@ -361,6 +361,144 @@ svg.icon {
     > * {
       // TODO: look how to standard for all devices
       width: 320px;
+    }
+  }
+}
+
+// Personal Tools
+.pastanaga-menu {
+  header {
+    display: flex;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid $silver-blue;
+
+    h2 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0;
+    }
+
+    a {
+      display: flex;
+    }
+
+    &.pulled {
+      justify-content: flex-start;
+      padding-left: 10px;
+      padding-right: 10px;
+
+      button {
+        margin-right: 10px;
+      }
+    }
+  }
+}
+
+.pastanaga-menu-list {
+  ul {
+    display: flex;
+    flex-direction: column;
+    list-style: none;
+    padding: 10px 20px;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  li {
+    border-bottom: 1px solid $silver-blue;
+    // padding: 5px 0;
+
+    button {
+      font-family: Poppins;
+      font-size: 14px;
+      font-weight: 500;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      width: 100%;
+      text-align: left;
+      text-transform: uppercase;
+      cursor: pointer;
+
+      svg {
+        color: $teal-blue;
+      }
+    }
+  }
+}
+
+.personal-tools {
+  header svg {
+    color: red;
+  }
+
+  .avatar {
+    height: 220px;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      object-position: top;
+      height: 100%;
+    }
+  }
+
+  .stats {
+    ul {
+      background-color: #f2f5f6;
+      color: #878f93;
+      display: flex;
+      list-style: none;
+      padding: 15px 0;
+      justify-content: center;
+      margin: 0;
+    }
+
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0 10px;
+
+      span:first-child {
+        font-size: 30px;
+        font-weight: 200;
+      }
+
+      span:last-child {
+        font-size: 12px;
+        font-weight: 500;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
+
+// Profile
+.vertical.divider {
+  border-left: 1px solid $silver;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.profile {
+  header {
+    button {
+      color: $teal-blue;
+    }
+  }
+}
+
+.menu-more {
+  header {
+    svg {
+      color: #d12c67;
     }
   }
 }

@@ -3,7 +3,6 @@ import Icon from './Icon/Icon';
 import logoutSVG from './icons/log-out.svg';
 import rightArrowSVG from './icons/right-key.svg';
 import avatar from './avatar.jpg';
-import './PersonalTools.css';
 
 class PersonalTools extends Component {
   state = {
@@ -29,7 +28,7 @@ class PersonalTools extends Component {
         <header className="header">
           <h2>Víctor Fernández de Alba</h2>
           <a href="#">
-            <Icon name={logoutSVG} size="32px" />
+            <Icon name={logoutSVG} size="36px" />
           </a>
         </header>
         <div className="avatar">
@@ -52,7 +51,7 @@ class PersonalTools extends Component {
             </li>
           </ul>
         </div>
-        <div className="links">
+        <div className="pastanaga-menu-list">
           {/* This (probably also) should be a Component by itself*/}
           <ul>
             <li>

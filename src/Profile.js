@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Icon from './Icon/Icon';
 import logoutSVG from './icons/log-out.svg';
 import backSVG from './icons/back.svg';
-import './Profile.css';
 
 class Profile extends Component {
   pull = () => {
@@ -15,12 +14,12 @@ class Profile extends Component {
         className="profile pastanaga-menu"
         style={{
           left: `${this.props.componentIndex * 100}%`,
-          width: `${this.props.theToolbar.offsetWidth}px`,
+          width: '100vw',
         }}
       >
         <header className="header pulled">
           <button onClick={this.pull}>
-            <Icon name={backSVG} size="32px" />
+            <Icon name={backSVG} size="36px" />
           </button>
           <div className="vertical divider" />
           <h2>Profile</h2>
