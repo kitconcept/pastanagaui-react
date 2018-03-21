@@ -367,6 +367,8 @@ svg.icon {
 
 // Personal Tools
 .pastanaga-menu {
+  width: 100vw;
+
   header {
     display: flex;
     padding: 8px 20px;
@@ -393,6 +395,10 @@ svg.icon {
         margin-right: 10px;
       }
     }
+  }
+
+  @media #{$sm-and-up} {
+    width: 320px;
   }
 }
 

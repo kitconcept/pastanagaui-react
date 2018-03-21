@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon/Icon';
 import logoutSVG from './icons/log-out.svg';
 import rightArrowSVG from './icons/right-key.svg';
 import avatar from './avatar.jpg';
 
 class PersonalTools extends Component {
-  state = {
-    pushed: false,
+  static propTypes = {
+    loadComponent: PropTypes.func.isRequired,
+    componentIndex: PropTypes.number.isRequired,
   };
 
   push = selector => {
-    this.setState((state, props) => ({
+    this.setState(() => ({
       pushed: true,
     }));
     this.props.loadComponent(selector);
@@ -22,7 +24,6 @@ class PersonalTools extends Component {
         className="personal-tools pastanaga-menu"
         style={{
           left: `${this.props.componentIndex * 100}%`,
-          width: `${this.props.theToolbar.offsetWidth}px`,
         }}
       >
         <header className="header">

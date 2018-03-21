@@ -17,11 +17,10 @@ class App extends Component {
     menuComponents: [],
   };
 
-  handleShrink = () =>
-    this.setState((state, props) => ({ expanded: !state.expanded }));
+  handleShrink = () => this.setState(state => ({ expanded: !state.expanded }));
 
-  closeMenu = (e, selector) =>
-    this.setState((state, props) => ({ showMenu: false, menuComponents: [] }));
+  closeMenu = () =>
+    this.setState(() => ({ showMenu: false, menuComponents: [] }));
 
   loadComponent = type => {
     const { menuComponents } = this.state;
@@ -33,12 +32,12 @@ class App extends Component {
         false,
       )
     ) {
-      import(`./${type}.js`).then(Component =>
-        this.setState((state, props) => ({
+      import(`./${type}.jsx`).then(LoadedComponent =>
+        this.setState(state => ({
           menuComponents: state.menuComponents.concat({
             name: `${type}`,
             component: (
-              <Component.default
+              <LoadedComponent.default
                 loadComponent={this.loadComponent}
                 unloadComponent={this.unloadComponent}
                 componentIndex={nextIndex}
@@ -53,7 +52,7 @@ class App extends Component {
   };
 
   unloadComponent = () => {
-    this.setState((state, props) => ({
+    this.setState(state => ({
       menuComponents: state.menuComponents.slice(0, -1),
     }));
   };
@@ -61,7 +60,7 @@ class App extends Component {
   showMenu = (e, selector) => {
     // PersonalTools always shows at bottom
     if (selector === 'PersonalTools') {
-      this.setState((state, props) => {
+      this.setState(state => {
         return {
           showMenu: !state.showMenu,
           menuStyle: { bottom: 0 },
@@ -69,7 +68,7 @@ class App extends Component {
       });
     } else {
       const elemOffsetTop = e.target.getBoundingClientRect().top;
-      this.setState((state, props) => {
+      this.setState(state => {
         return {
           showMenu: !state.showMenu,
           menuStyle: { top: `${elemOffsetTop}px` },

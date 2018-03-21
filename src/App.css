@@ -763,24 +763,29 @@ svg.icon {
   .pusher-puller > * {
     width: 320px; } }
 
-.pastanaga-menu header {
-  display: flex;
-  padding: 8px 20px;
-  justify-content: space-between;
-  align-items: center;
-  border-bottom: 4px solid #b8c6c8; }
-  .pastanaga-menu header h2 {
-    font-size: 16px;
-    font-weight: 500;
-    margin: 0; }
-  .pastanaga-menu header a {
-    display: flex; }
-  .pastanaga-menu header.pulled {
-    justify-content: flex-start;
-    padding-left: 10px;
-    padding-right: 10px; }
-    .pastanaga-menu header.pulled button {
-      margin-right: 10px; }
+.pastanaga-menu {
+  width: 100vw; }
+  .pastanaga-menu header {
+    display: flex;
+    padding: 8px 20px;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 4px solid #b8c6c8; }
+    .pastanaga-menu header h2 {
+      font-size: 16px;
+      font-weight: 500;
+      margin: 0; }
+    .pastanaga-menu header a {
+      display: flex; }
+    .pastanaga-menu header.pulled {
+      justify-content: flex-start;
+      padding-left: 10px;
+      padding-right: 10px; }
+      .pastanaga-menu header.pulled button {
+        margin-right: 10px; }
+  @media only screen and (min-width: 600px) {
+    .pastanaga-menu {
+      width: 320px; } }
 
 .pastanaga-menu-list ul {
   display: flex;

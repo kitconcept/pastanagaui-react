@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon/Icon';
 import rightArrowSVG from './icons/right-key.svg';
 import userSVG from './icons/user.svg';
 
 class More extends Component {
-  state = {
-    pushed: false,
+  static propTypes = {
+    loadComponent: PropTypes.func.isRequired,
+    componentIndex: PropTypes.number.isRequired,
   };
 
   push = selector => {
-    this.setState((state, props) => ({
+    this.setState(() => ({
       pushed: true,
     }));
     this.props.loadComponent(selector);

@@ -1,9 +1,14 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import Icon from './Icon/Icon';
-import logoutSVG from './icons/log-out.svg';
 import backSVG from './icons/back.svg';
 
 class Profile extends Component {
+  static propTypes = {
+    unloadComponent: PropTypes.func.isRequired,
+    componentIndex: PropTypes.number.isRequired,
+  };
+
   pull = () => {
     this.props.unloadComponent();
   };
