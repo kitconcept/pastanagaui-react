@@ -672,8 +672,9 @@ svg.icon {
     outline: none; }
 
 .content {
+  display: flex;
   background-color: #f2f5f6;
-  flex-grow: 1; }
+  flex: 1; }
 
 .pusher-puller {
   position: relative;
@@ -689,10 +690,17 @@ svg.icon {
     height: 100%;
     width: 20px;
     justify-content: flex-end;
-    transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+    transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    position: fixed; }
+    .toolbar + .content {
+      margin-left: 20px;
+      transition: margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
     .toolbar.expanded {
       height: 100%;
       width: 80px; }
+      .toolbar.expanded + .content {
+        margin-left: 80px;
+        transition: margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
       .toolbar.expanded .toolbar-body {
         height: 100%; }
       .toolbar.expanded .toolbar-actions {
