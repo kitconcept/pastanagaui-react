@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router';
 import { Icon } from '../../components';
 
 import logoutSVG from '../../icons/log-out.svg';
@@ -29,12 +30,12 @@ class PersonalTools extends Component {
       >
         <header className="header">
           <h2>Víctor Fernández de Alba</h2>
-          <a href="#">
+          <Link to="/logout">
             <Icon name={logoutSVG} size="36px" />
-          </a>
+          </Link>
         </header>
         <div className="avatar">
-          <img src={avatar} />
+          <img src={avatar} alt="user avatar" />
         </div>
         <div className="stats">
           {/* This should be a Component by itself*/}

@@ -1,4 +1,5 @@
 import React, { Component, Fragment } from 'react';
+import { Link } from 'react-router';
 import { Icon } from '../../components';
 import pastanagaSmall from './pastanaga-small.svg';
 import pastanagalogo from './pastanaga.svg';
@@ -57,23 +58,23 @@ class Toolbar extends Component {
     }));
   };
 
-  showMenu = (e, selector) => {
+  toggleMenu = (e, selector) => {
+    if (this.state.showMenu) {
+      this.closeMenu();
+      return;
+    }
     // PersonalTools always shows at bottom
     if (selector === 'PersonalTools') {
-      this.setState(state => {
-        return {
-          showMenu: !state.showMenu,
-          menuStyle: { bottom: 0 },
-        };
-      });
+      this.setState(state => ({
+        showMenu: !state.showMenu,
+        menuStyle: { bottom: 0 },
+      }));
     } else {
       const elemOffsetTop = e.target.getBoundingClientRect().top;
-      this.setState(state => {
-        return {
-          showMenu: !state.showMenu,
-          menuStyle: { top: `${elemOffsetTop}px` },
-        };
-      });
+      this.setState(state => ({
+        showMenu: !state.showMenu,
+        menuStyle: { top: `${elemOffsetTop}px` },
+      }));
     }
     this.loadComponent(selector);
   };
@@ -97,25 +98,25 @@ class Toolbar extends Component {
             }}
           >
             {this.state.menuComponents.map(component => (
-              <Fragment>{component.component}</Fragment>
+              <Fragment key={component.name}>{component.component}</Fragment>
             ))}
           </div>
         </div>
         <div className={this.state.expanded ? 'toolbar expanded' : 'toolbar'}>
           <div className="toolbar-body">
             <div className="toolbar-actions">
-              <a className="edit" href="#">
+              <Link className="edit" to="/edit">
                 <Icon name={penSVG} size="36px" className="circled" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/contents">
                 <Icon name={folderSVG} size="36px" />
-              </a>
-              <a href="#">
+              </Link>
+              <Link to="/add-menu">
                 <Icon name={addSVG} size="36px" />
-              </a>
+              </Link>
               <button
                 className="more"
-                onClick={e => this.showMenu(e, 'More')}
+                onClick={e => this.toggleMenu(e, 'More')}
                 tabIndex={0}
               >
                 <Icon name={moreSVG} size="36px" />
@@ -125,7 +126,7 @@ class Toolbar extends Component {
               <img className="minipastanaga" src={pastanagaSmall} alt="" />
               <button
                 className="user"
-                onClick={e => this.showMenu(e, 'PersonalTools')}
+                onClick={e => this.toggleMenu(e, 'PersonalTools')}
                 tabIndex={0}
               >
                 <Icon name={userSVG} size="36px" />
