@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from './Icon/Icon';
-import logoutSVG from './icons/log-out.svg';
-import rightArrowSVG from './icons/right-key.svg';
+import { Icon } from '../../components';
+
+import logoutSVG from '../../icons/log-out.svg';
+import rightArrowSVG from '../../icons/right-key.svg';
 import avatar from './avatar.jpg';
 
 class PersonalTools extends Component {

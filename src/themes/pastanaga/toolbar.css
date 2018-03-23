@@ -536,6 +536,10 @@ body {
   padding: 0;
   font-family: Poppins; }
 
+@media only screen and (min-width: 600px) {
+  body {
+    display: flex; } }
+
 svg.circled {
   box-sizing: content-box;
   padding: 4px;
@@ -692,15 +696,15 @@ svg.icon {
     justify-content: flex-end;
     transition: width 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045);
     position: fixed; }
-    .toolbar + .content {
-      margin-left: 20px;
-      transition: margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+    .toolbar + .pusher {
+      margin-right: 20px;
+      transition: margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
     .toolbar.expanded {
       height: 100%;
       width: 80px; }
-      .toolbar.expanded + .content {
-        margin-left: 80px;
-        transition: margin-left 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
+      .toolbar.expanded + .pusher {
+        margin-right: 80px;
+        transition: margin-right 0.3s cubic-bezier(0.6, -0.28, 0.735, 0.045); }
       .toolbar.expanded .toolbar-body {
         height: 100%; }
       .toolbar.expanded .toolbar-actions {

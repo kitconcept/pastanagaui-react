@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Icon from './Icon/Icon';
-import rightArrowSVG from './icons/right-key.svg';
-import userSVG from './icons/user.svg';
+import { Icon } from '../../components';
+import rightArrowSVG from '../../icons/right-key.svg';
+import userSVG from '../../icons/user.svg';
 
 class More extends Component {
   static propTypes = {
