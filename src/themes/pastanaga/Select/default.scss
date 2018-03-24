@@ -1,0 +1,9 @@
+@import 'control';
+@import 'menu';
+@import 'mixins';
+@import 'multi';
+@import 'spinner';
+
+.Select {
+  min-width: 100px;
+}
