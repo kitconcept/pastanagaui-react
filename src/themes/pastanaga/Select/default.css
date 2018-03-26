@@ -12,6 +12,13 @@
  * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
  * MIT License: https://github.com/JedWatson/react-select
 */
+/**
+ * React Select
+ * ============
+ * Created by Jed Watson and Joss Mackison for KeystoneJS, http://www.keystonejs.com/
+ * https://twitter.com/jedwatson https://twitter.com/jossmackison https://twitter.com/keystonejs
+ * MIT License: https://github.com/JedWatson/react-select
+*/
 @keyframes Select-animation-spin {
   to {
     transform: rotate(1turn); } }
@@ -69,7 +76,7 @@
     border-color: #08c #0099e6 #0099e6;
     box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 5px -1px fade(#08c, 50%); }
   .Select.has-value.is-clearable.Select--single > .Select-control .Select-value {
-    padding-right: 42px; }
+    padding-right: 50px; }
   .Select.has-value.Select--single > .Select-control .Select-value .Select-value-label,
   .Select.has-value.is-pseudo-focused.Select--single > .Select-control .Select-value .Select-value-label {
     color: #333; }
@@ -98,14 +105,14 @@
 .Select-control {
   background-color: #fff;
   border-color: #d9d9d9 #ccc #b3b3b3;
-  border-radius: 4px;
-  border: 1px solid #ccc;
+  border-radius: 0px;
+  border: 0px solid #ccc;
   color: #333;
   cursor: default;
   display: table;
   border-spacing: 0;
   border-collapse: separate;
-  height: 36px;
+  height: 50px;
   outline: none;
   overflow: hidden;
   position: relative;
@@ -121,7 +128,7 @@
   bottom: 0;
   color: #aaa;
   left: 0;
-  line-height: 34px;
+  line-height: 50px;
   padding-left: 10px;
   padding-right: 10px;
   position: absolute;
@@ -133,7 +140,7 @@
   white-space: nowrap; }
 
 .Select-input {
-  height: 34px;
+  height: 50px;
   padding-left: 10px;
   padding-right: 10px;
   vertical-align: middle; }
@@ -150,7 +157,7 @@
     outline: none;
     line-height: 17px;
     /* For IE 8 compatibility */
-    padding: 8px 0 12px;
+    padding: 16px 0 20px;
     /* For IE 8 compatibility */
     -webkit-appearance: none; }
     .is-focused .Select-input > input {
@@ -191,17 +198,17 @@
   position: relative;
   text-align: center;
   vertical-align: middle;
-  width: 17px; }
+  width: 25px; }
   .Select-clear-zone:hover {
     color: #d0021b; }
 
 .Select-clear {
   display: inline-block;
-  font-size: 18px;
+  font-size: 25px;
   line-height: 1; }
 
 .Select--multi .Select-clear-zone {
-  width: 17px; }
+  width: 25px; }
 
 .Select--multi .Select-multi-value-wrapper {
   display: inline-block; }
@@ -257,15 +264,15 @@
  * MIT License: https://github.com/JedWatson/react-select
 */
 .Select-menu-outer {
-  border-bottom-right-radius: 4px;
-  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
   background-color: #fff;
   border: 1px solid #ccc;
   border-top-color: #e6e6e6;
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.06);
+  box-shadow: 0;
   box-sizing: border-box;
   margin-top: -1px;
-  max-height: 200px;
+  max-height: 220px;
   position: absolute;
   left: 0;
   top: 100%;
@@ -274,7 +281,7 @@
   -webkit-overflow-scrolling: touch; }
 
 .Select-menu {
-  max-height: 198px;
+  max-height: 218px;
   overflow-y: auto; }
 
 .Select-option {
@@ -285,13 +292,13 @@
   display: block;
   padding: 8px 10px; }
   .Select-option:last-child {
-    border-bottom-right-radius: 4px;
-    border-bottom-left-radius: 4px; }
+    border-bottom-right-radius: 0px;
+    border-bottom-left-radius: 0px; }
   .Select-option.is-selected {
-    background-color: #f5faff;
+    background-color: transparent;
     color: #333; }
   .Select-option.is-focused {
-    background-color: #f2f9fc;
+    background-color: transparent;
     color: #333; }
   .Select-option.is-disabled {
     color: #cccccc;
@@ -413,4 +420,33 @@
     -webkit-transform: rotate(1turn); } }
 
 .Select {
-  min-width: 100px; }
+  min-width: 215px;
+  font-weight: 300; }
+  .Select .Select-control {
+    border-bottom: 2px solid #b8c6c8; }
+  .Select.is-open > .Select-control {
+    border-bottom-style: dotted; }
+
+.Select-option {
+  display: flex;
+  align-items: center;
+  height: 40px; }
+  .Select-option span {
+    color: #636363; }
+  .Select-option svg {
+    display: none; }
+  .Select-option.is-selected span {
+    color: #007bc1; }
+  .Select-option.is-selected svg {
+    display: block;
+    color: #007bc1; }
+  .Select-option.is-focused span {
+    color: #4a4a4a; }
+  .Select-option.is-focused svg {
+    display: block;
+    color: #b8c6c8; }
+
+.Select-menu-outer {
+  border: 0;
+  border-bottom: 2px solid #b8c6c8;
+  position: static; }

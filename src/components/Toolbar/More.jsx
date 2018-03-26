@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Icon } from '../../components';
+import { Icon, Workflow } from '../../components';
 import rightArrowSVG from '../../icons/right-key.svg';
 import userSVG from '../../icons/user.svg';
 
@@ -23,13 +23,12 @@ class More extends Component {
         className="menu-more pastanaga-menu"
         style={{
           left: `${this.props.componentIndex * 100}%`,
-          width: '100vw',
         }}
       >
         <header>
           <h2>Title of the content</h2>
           <button
-            className="user"
+            className="more-user"
             onClick={() => this.push('PersonalTools')}
             tabIndex={0}
           >
@@ -38,6 +37,9 @@ class More extends Component {
         </header>
         <div className="pastanaga-menu-list">
           <ul>
+            <li className="state-select">
+              <Workflow />
+            </li>
             <li>
               <span className="pastanaga-menu-field" />
               <button onClick={() => this.push('Profile')}>

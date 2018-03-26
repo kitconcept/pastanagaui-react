@@ -782,7 +782,8 @@ svg.icon {
     padding: 8px 20px;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 4px solid #b8c6c8; }
+    border-bottom: 4px solid #b8c6c8;
+    height: 44px; }
     .pastanaga-menu header h2 {
       font-size: 16px;
       font-weight: 500;
@@ -807,24 +808,25 @@ svg.icon {
   justify-content: center;
   margin-top: 0; }
 
-.pastanaga-menu-list li {
+.pastanaga-menu-list li button {
+  font-family: Poppins;
+  font-size: 14px;
+  font-weight: 500;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  width: 100%;
+  text-align: left;
+  text-transform: uppercase;
+  cursor: pointer; }
+  .pastanaga-menu-list li button svg {
+    color: #007eb1; }
+
+.pastanaga-menu-list li:not(.state-select) {
   border-bottom: 1px solid #b8c6c8; }
-  .pastanaga-menu-list li button {
-    font-family: Poppins;
-    font-size: 14px;
-    font-weight: 500;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: transparent;
-    border: none;
-    padding: 0;
-    width: 100%;
-    text-align: left;
-    text-transform: uppercase;
-    cursor: pointer; }
-    .pastanaga-menu-list li button svg {
-      color: #007eb1; }
 
 .personal-tools header svg {
   color: red; }
@@ -870,3 +872,20 @@ svg.icon {
 
 .menu-more header svg {
   color: #d12c67; }
+
+@media only screen and (min-width: 600px) {
+  .menu-more .more-user {
+    display: none; } }
+
+.menu-more .state-select {
+  display: flex; }
+  .menu-more .state-select .Select {
+    margin-left: 5px; }
+  .menu-more .state-select label {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 18px;
+    margin-right: 5px;
+    width: 25%;
+    text-transform: uppercase;
+    border-bottom: 1px solid #edf1f2; }

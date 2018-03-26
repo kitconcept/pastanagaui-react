@@ -1,12 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import Select from 'react-select';
-import { Icon } from './components';
-import './themes/pastanaga/Select/default.css';
-import downSVG from './icons/down-key.svg';
-import upSVG from './icons/up-key.svg';
-import checkSVG from './icons/check.svg';
+import { Icon } from '../../components';
+import '../../themes/pastanaga/Select/default.css';
+import downSVG from '../../icons/down-key.svg';
+import upSVG from '../../icons/up-key.svg';
+import checkSVG from '../../icons/check.svg';
 
-class Content extends Component {
+class WorkflowSelect extends Component {
   state = {
     selectedOption: { value: 'private', label: 'Private', color: '#ed4033' },
   };
@@ -65,46 +65,37 @@ class Content extends Component {
     const value = selectedOption && selectedOption.value;
 
     return (
-      <div
-        style={{
-          display: 'flex',
-          justifyContent: 'center',
-          width: '100%',
-          alignItems: 'center',
-        }}
-      >
-        <div>
-          <Select
-            name="form-field-name"
-            arrowRenderer={({ onMouseDown, isOpen }) =>
-              isOpen ? (
-                <Icon name={upSVG} size="24px" />
-              ) : (
-                <Icon name={downSVG} size="24px" />
-              )
-            }
-            clearable={false}
-            searchable={false}
-            onBlur={() => {
-              debugger;
-            }}
-            value={value}
-            onChange={this.handleChange}
-            options={[
-              { value: 'private', label: 'Private', color: '#ed4033' },
-              { value: 'public', label: 'Public', color: '#007bc1' },
-              { value: 'intranet', label: 'Intranet', color: '#51aa55' },
-              { value: 'draft', label: 'Draft', color: '#f6a808' },
-              { value: 'review', label: 'Review', color: '#f4e037' },
-            ]}
-            valueRenderer={this.selectValue}
-            optionRenderer={this.optionRenderer}
-          />
-          <div> BLABLA </div>
-        </div>
-      </div>
+      <Fragment>
+        <label htmlFor="state-select">State</label>
+        <Select
+          name="state-select"
+          arrowRenderer={({ onMouseDown, isOpen }) =>
+            isOpen ? (
+              <Icon name={upSVG} size="24px" />
+            ) : (
+              <Icon name={downSVG} size="24px" />
+            )
+          }
+          clearable={false}
+          searchable={false}
+          onBlur={() => {
+            debugger;
+          }}
+          value={value}
+          onChange={this.handleChange}
+          options={[
+            { value: 'private', label: 'Private', color: '#ed4033' },
+            { value: 'public', label: 'Public', color: '#007bc1' },
+            { value: 'intranet', label: 'Intranet', color: '#51aa55' },
+            { value: 'draft', label: 'Draft', color: '#f6a808' },
+            { value: 'review', label: 'Review', color: '#f4e037' },
+          ]}
+          valueRenderer={this.selectValue}
+          optionRenderer={this.optionRenderer}
+        />
+      </Fragment>
     );
   }
 }
 
-export default Content;
+export default WorkflowSelect;

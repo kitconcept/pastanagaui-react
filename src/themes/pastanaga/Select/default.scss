@@ -1,3 +1,15 @@
+$silverTwo: #b8c6c8;
+$cerulean: #007bc1;
+
+// Pastanaga Overrides
+$select-input-border-radius: 0px;
+$select-input-border-width: 0px;
+$select-input-height: 50px;
+$select-menu-box-shadow: 0;
+$select-option-selected-bg: transparent;
+$select-option-focused-bg: transparent;
+$select-menu-max-height: 220px;
+
 @import 'control';
 @import 'menu';
 @import 'mixins';
@@ -5,5 +17,55 @@
 @import 'spinner';
 
 .Select {
-  min-width: 100px;
+  min-width: 215px;
+  font-weight: 300;
+
+  .Select-control {
+    border-bottom: 2px solid $silverTwo;
+  }
+
+  &.is-open > .Select-control {
+    border-bottom-style: dotted;
+  }
+}
+
+.Select-option {
+  display: flex;
+  align-items: center;
+  height: 40px;
+
+  span {
+    color: #636363;
+  }
+
+  svg {
+    display: none;
+  }
+
+  &.is-selected {
+    span {
+      color: $cerulean;
+    }
+
+    svg {
+      display: block;
+      color: $cerulean;
+    }
+  }
+
+  &.is-focused {
+    span {
+      color: #4a4a4a;
+    }
+    svg {
+      display: block;
+      color: $silverTwo;
+    }
+  }
+}
+
+.Select-menu-outer {
+  border: 0;
+  border-bottom: 2px solid $silverTwo;
+  position: static; // We want it pushes the next items down.
 }
