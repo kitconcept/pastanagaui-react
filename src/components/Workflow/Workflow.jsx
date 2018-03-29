@@ -78,9 +78,9 @@ class WorkflowSelect extends Component {
           }
           clearable={false}
           searchable={false}
-          onBlur={() => {
-            debugger;
-          }}
+          // onBlur={() => {
+          //   debugger;
+          // }}
           value={value}
           onChange={this.handleChange}
           options={[

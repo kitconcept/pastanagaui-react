@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Icon, Workflow } from '../../components';
+import { Icon, Display, Workflow } from '../../components';
 import rightArrowSVG from '../../icons/right-key.svg';
 import userSVG from '../../icons/user.svg';
 
@@ -39,6 +39,9 @@ class More extends Component {
           <ul>
             <li className="state-select">
               <Workflow />
+            </li>
+            <li className="display-select">
+              <Display />
             </li>
             <li>
               <span className="pastanaga-menu-field" />

@@ -455,7 +455,7 @@ svg.icon {
     }
   }
 
-  li:not(.state-select) {
+  li:not(.state-select):not(.display-select) {
     border-bottom: 1px solid $silver-blue;
   }
 }
@@ -536,7 +536,8 @@ svg.icon {
     }
   }
 
-  .state-select {
+  .state-select,
+  .display-select {
     display: flex;
 
     .Select {

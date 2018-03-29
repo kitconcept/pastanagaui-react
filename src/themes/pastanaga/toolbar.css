@@ -825,7 +825,7 @@ svg.icon {
   .pastanaga-menu-list li button svg {
     color: #007eb1; }
 
-.pastanaga-menu-list li:not(.state-select) {
+.pastanaga-menu-list li:not(.state-select):not(.display-select) {
   border-bottom: 1px solid #b8c6c8; }
 
 .personal-tools header svg {
@@ -877,11 +877,14 @@ svg.icon {
   .menu-more .more-user {
     display: none; } }
 
-.menu-more .state-select {
+.menu-more .state-select,
+.menu-more .display-select {
   display: flex; }
-  .menu-more .state-select .Select {
+  .menu-more .state-select .Select,
+  .menu-more .display-select .Select {
     margin-left: 5px; }
-  .menu-more .state-select label {
+  .menu-more .state-select label,
+  .menu-more .display-select label {
     font-size: 14px;
     font-weight: 500;
     padding-top: 18px;
