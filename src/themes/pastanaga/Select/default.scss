@@ -4,7 +4,7 @@ $cerulean: #007bc1;
 // Pastanaga Overrides
 $select-input-border-radius: 0px;
 $select-input-border-width: 0px;
-$select-input-height: 50px;
+$select-input-height: 45px;
 $select-menu-box-shadow: 0;
 $select-option-selected-bg: transparent;
 $select-option-focused-bg: transparent;
@@ -32,7 +32,7 @@ $select-menu-max-height: 220px;
 .Select-option {
   display: flex;
   align-items: center;
-  height: 40px;
+  height: 45px;
 
   span {
     color: #636363;

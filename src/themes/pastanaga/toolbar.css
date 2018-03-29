@@ -812,6 +812,7 @@ svg.icon {
   font-family: Poppins;
   font-size: 14px;
   font-weight: 500;
+  height: 45px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -827,6 +828,13 @@ svg.icon {
 
 .pastanaga-menu-list li:not(.state-select):not(.display-select) {
   border-bottom: 1px solid #b8c6c8; }
+
+.pastanaga-menu-list .pastanaga-menu-label {
+  margin-right: 12px; }
+
+.pastanaga-menu-list .pastanaga-menu-value {
+  font-weight: 300;
+  text-transform: initial; }
 
 .personal-tools header svg {
   color: red; }

@@ -44,18 +44,21 @@ class More extends Component {
               <Display />
             </li>
             <li>
-              <span className="pastanaga-menu-field" />
-              <button onClick={() => this.push('Profile')}>
-                Profile<Icon name={rightArrowSVG} size="24px" />
+              <button onClick={() => this.push('History')}>
+                <div>
+                  <span className="pastanaga-menu-label">Modified</span>
+                  <span className="pastanaga-menu-value">6 days ago</span>
+                </div>
+                <Icon name={rightArrowSVG} size="24px" />
               </button>
             </li>
             <li>
-              <button>
+              <button onClick={() => this.push('Sharing')}>
                 Grant Access<Icon name={rightArrowSVG} size="24px" />
               </button>
             </li>
             <li>
-              <button>
+              <button onClick={() => this.push('Portlets')}>
                 Portlets<Icon name={rightArrowSVG} size="24px" />
               </button>
             </li>
